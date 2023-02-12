@@ -7,8 +7,6 @@ import csv
 election_data = os.path.join('Resources', 'election_data.csv')
 
 candidateNamesList = []
-winner_tally = []
-
 stockhamName = str("Charles Casper Stockham")
 degetteName = str("Diana DeGette")
 doaneName = str("Raymon Anthony Doane")
@@ -72,3 +70,15 @@ print("---------------------\n\n")
 print(f"Winner: {winner}\n\n")
 print("---------------------\n")
 
+output_path = os.path.join("analysis", "election_data_output.txt")
+with open(output_path, 'w') as textfile:
+
+    textfile.write("Election Results\n\n")
+    textfile.write("---------------------\n\n")
+    textfile.write(f"Total Votes: {voteCount} \n")
+    textfile.write(f"Charles Casper Stockham: {stockham_percent_votes}% ({stockhamVotes_count})\n")
+    textfile.write(f"Diana DeGette: {degette_percent_votes}% ({degetteVotes_count})\n")
+    textfile.write(f"Raymon Anthony Doane: {doane_percent_votes}% ({doaneVotes_count})\n")
+    textfile.write("---------------------\n\n")
+    textfile.write(f"Winner: {winner}\n\n")
+    textfile.write("---------------------\n")
